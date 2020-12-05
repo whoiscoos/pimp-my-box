@@ -32,7 +32,7 @@
       - bc
       - bind9-host
       - bzip2
-      - cfv
+      #- cfv
       - colordiff
       - coreutils
       - curl
@@ -77,9 +77,9 @@
   apt: name=ffmpeg state=latest
   when: av_tool == 'ffmpeg' or ansible_distribution_release in ("precise", "bionic", "focal")
 
-- name: Install libav
-  apt: name=libav-tools state=latest
-  when: av_tool == 'libav' or ansible_distribution_release not in ("precise", "bionic", "focal")
+#- name: Install libav
+#  apt: name=libav-tools state=latest
+#  when: av_tool == 'libav' or ansible_distribution_release not in ("precise", "bionic", "focal")
 
 - name: Install fuseiso9660 + unrar (most distros)
   apt:

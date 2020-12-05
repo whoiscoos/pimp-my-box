@@ -1,0 +1,25 @@
+# Edit the values as they apply to *your* 'my-box' target host.
+# Do NOT use the provided template unchanged!
+# You MUST at least change the 'box_ipv4' value!
+
+box_ipv4: 10.10.90.10
+ansible_ssh_host: rtps
+ansible_ssh_port: 22
+ansible_ssh_user: root
+ansible_ssh_private_key_file: /home/debops/.ssh/debops_controller_rsa4096_2020
+ansible_sudo: false
+
+rt_global_up_rate_kb: 5000
+rt_global_down_rate_kb: 25000
+rt_pieces_memory: 1024M
+
+#pyenv_enabled: true
+#pyenv_python_version: 2.7.13
+
+pyenv_enabled: false
+python_bin: /usr/bin/python2
+venv_bin: /usr/bin/virtualenv
+
+flexget_enabled: no
+rutorrent_enabled: no
+# Set a 'rutorrent_www_pass' in 'secrets.yml'!
