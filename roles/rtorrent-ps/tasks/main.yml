@@ -45,6 +45,12 @@
       - libtool
       - autoconf
       - automake
+      ## adding build tools needed for debian 10 
+      ## host to execute build.sh
+      - 'time'
+      - 'zlib1g-dev'
+      - 'g++-7'
+      - 'gcc-7'
 
 - name: Install build dependencies for rTorrent-PS
   apt:

@@ -77,6 +77,10 @@
   apt: name=ffmpeg state=latest
   when: av_tool == 'ffmpeg' or ansible_distribution_release in ("precise", "bionic", "focal")
 
+## TODO
+## libab no longer a package on debian 10
+## not sure if this package is necessary
+
 #- name: Install libav
 #  apt: name=libav-tools state=latest
 #  when: av_tool == 'libav' or ansible_distribution_release not in ("precise", "bionic", "focal")
@@ -96,6 +100,8 @@
       # TODO: check what name to use for what distro/version (it's a mess)
       #- fuseiso
       #- fuseiso9660
+
+      - fuseiso9660
       - unrar-free
   when: ansible_distribution == "Debian" and ansible_distribution_major_version in "789"
 
